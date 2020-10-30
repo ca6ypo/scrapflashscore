@@ -23,12 +23,10 @@ def waitForLoad(driver):
         except StaleElementReferenceException:
             return
 
-#REPLACE WITH YOUR DRIVER PATH. EXAMPLES FOR CHROME AND PHANTOMJS
 
 urll = str(input("link please:"))
 #urll = "https://www.flashscore.ru/football/italy/serie-a/results/"
 driver = webdriver.Chrome(executable_path='./chromedriver')
-#driver = webdriver.PhantomJS(executable_path='./phantomjs')
 driver.get(urll)
 waitForLoad(driver)
 #print(driver.page_source)
@@ -154,8 +152,6 @@ def fodds():
 	except:
 		btson.append(odd05.get_text())
 		btsnn.append(odd05.get_text())
-	#print(odd0ob, odd1ob, odd2ob)
-	#print(odd0ob, odd1ob, odd2ob)
 
 def goParse(pink):
 	driver.get(pink)
@@ -179,8 +175,6 @@ for pink in links:
 	print(pink)
 	goParse(pink)
 	#print(komand, tourss, resultss, tim1)
-	
-#<div id="g_1_nVD6E2Gi" title="Подробности матча!" elementtiming="SpeedCurveFRP" class="event__match event__match--scheduled event__match--oneLine"><div class="event__check" title="Добавить этот матч в раздел Мои игры!"></div><div class="event__time">14:30</div><div class="event__participant event__participant--home">Вест Хэм</div><div class="event__scores">-</div><div class="event__participant event__participant--away">Манчестер Сити</div><svg class="headphones___1JcUGYy icon--audio"><title></title><use xlink:href="/res/_fs/build/symbols.f1bc6b2.svg#headphones"></use></svg><svg class="tv___3CDCWbf icon--tv"><title></title><use xlink:href="/res/_fs/build/symbols.f1bc6b2.svg#tv"></use></svg><svg class="bet___3LxnyUK event__live--icon icon--live" data-bookmaker-id="454"><title></title><use xlink:href="/res/_fs/build/symbols.f1bc6b2.svg#liveBetDesktop"></use></svg></div>
 
 def make_hyperlink(komand, pink):
 	return '=HYPERLINK("%s", "%s")'%(pink.format(pink), komand)
